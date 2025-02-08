@@ -24,8 +24,6 @@ const TitheScreen = () => {
     const pay = (parseInt(amount) * parseInt(10)) / parseInt(100);
     const money = currencyFormatter.format(pay, { code: currency });
 
-    console.log(money);
-
     setPercentage(money);
   };
 
