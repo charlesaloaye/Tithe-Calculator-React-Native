@@ -2,10 +2,10 @@ import { Text, TouchableOpacity } from "react-native";
 import styles from "../style/Style";
 import ReactNativeText from "@kaloraat/react-native-text";
 
-const Button = ({ title }) => {
+const Button = ({ title, navigate, bgColor = "blue", color = "#fff" }) => {
   return (
-    <TouchableOpacity style={styles.button}>
-      <ReactNativeText medium bold color='#ff0000'>
+    <TouchableOpacity onPress={navigate} style={styles.button}>
+      <ReactNativeText medium bold color={color}>
         {title}
       </ReactNativeText>
     </TouchableOpacity>

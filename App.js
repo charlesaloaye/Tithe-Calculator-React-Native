@@ -1,4 +1,3 @@
-import { StatusBar } from "expo-status-bar";
 import TitheScreen from "./screens/TitheScreen";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native";
@@ -10,8 +9,8 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
-        <Stack.Screen name='Tithe Calculator' component={TitheScreen} />
-        {/* <Stack.Screen name='Currency Converter' component={ConverterScreen} /> */}
+        <Stack.Screen name='TitheScreen' component={TitheScreen} />
+        <Stack.Screen name='ConverterScreen' component={ConverterScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

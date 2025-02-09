@@ -4,7 +4,11 @@ import currencyFormatter from "currency-formatter";
 
 import Input from "../component/Input";
 import { useState } from "react";
-const TitheScreen = () => {
+import { ScrollView, View } from "react-native";
+import Page from "../component/Page";
+import styles from "../style/Style";
+import Button from "../component/Button";
+const TitheScreen = ({ navigation }) => {
   const [amount, setAmount] = useState(0);
   const [percentage, setPercentage] = useState(null);
   const location = useGeoLocation();
@@ -28,13 +32,23 @@ const TitheScreen = () => {
   };
 
   return (
-    <Input
-      handleBlur={handleBlur}
-      value={amount}
-      setValue={setAmount}
-      title='Amount'
-      percentage={percentage}
-    />
+    <ScrollView style={styles.body}>
+      <View style={styles.mt150}>
+        <Page title='Tithe Calculator' />
+
+        <Input
+          handleBlur={handleBlur}
+          value={amount}
+          setValue={setAmount}
+          title='Amount'
+          percentage={percentage}
+        />
+        <Button
+          title='Switch to Currency Converter'
+          navigate={() => navigation.navigate("ConverterScreen")}
+        />
+      </View>
+    </ScrollView>
   );
 };
 

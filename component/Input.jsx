@@ -1,9 +1,7 @@
 import { Text, TextInput, View } from "react-native";
 import styles from "../style/Style";
-import Page from "../component/Page";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import ReactNativeText from "@kaloraat/react-native-text";
-import Button from "./Button";
 const Input = ({
   title,
   autoCorrect = false,
@@ -16,7 +14,6 @@ const Input = ({
 }) => {
   return (
     <KeyboardAwareScrollView contentContainerStyle={styles.formContainer}>
-      <Page title='Tithe Calculator' />
       <ReactNativeText center large style={styles.percentage}>
         {percentage}
       </ReactNativeText>
@@ -33,8 +30,6 @@ const Input = ({
           onChangeText={(value) => setValue(value)}
           onBlur={handleBlur}
         />
-
-        <Button title='Switch to Currency Converter' />
       </View>
     </KeyboardAwareScrollView>
   );
